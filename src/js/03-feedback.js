@@ -9,8 +9,8 @@ refs.form.addEventListener('submit', onSubmitForm);
 refs.form.addEventListener('input', _.throttle(onInputForm, 500));
  
 function onSubmitForm(evt) {
-    ev.preventDefault()
-    ev.currentTarget.reset()
+    evt.preventDefault()
+    evt.currentTarget.reset()
     localStorage.removeItem("feedback-form-state")
 };
 
