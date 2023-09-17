@@ -14,7 +14,7 @@ function onSubmitForm(evt) {
     localStorage.removeItem("feedback-form-state")
 };
 
-function onInputForm(ev) {
+function onInputForm(evt) {
     const emailValue = refs.input.value;
     const messageValue = refs.textarea.value;
 
