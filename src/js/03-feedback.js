@@ -8,9 +8,9 @@ const refs = {
 refs.form.addEventListener('submit', onSubmitForm);
 refs.form.addEventListener('input', _.throttle(onInputForm, 500));
  
-function onSubmitForm(evt) {
-    evt.preventDefault()
-    evt.currentTarget.reset()
+function onSubmitForm(ev) {
+    ev.preventDefault()
+    ev.currentTarget.reset()
     localStorage.removeItem("feedback-form-state")
 };
 
