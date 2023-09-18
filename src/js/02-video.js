@@ -6,13 +6,14 @@ const player = new Player(iframe);
 
 player.on('timeupdate', throttle(onPlay, 1000));
 
+const videoplayerCurrent = "videoplayer-current-time";
+
 function onPlay(event) {
     const currentTime = event.seconds;
-    localStorage.setItem("videoplayer-current-time", JSON.stringify(currentTime));
+    localStorage.setItem(videoplayerCurrent, currentTime);
 };
 
-const savedCurrentTime = localStorage.getItem("videoplayer-current-time");
+const savedCurrentTime = localStorage.getItem(videoplayerCurrent);
 if (savedCurrentTime !== null) {
-    const currentTime = JSON.parse(savedCurrentTime);
-    player.setCurrentTime(currentTime);
+    player.setCurrentTime(savedCurrentTime);
 };
