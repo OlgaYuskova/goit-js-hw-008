@@ -37,5 +37,3 @@ function populateInputForms() {
 };
 
 populateInputForms();
-
-console.log(form)
