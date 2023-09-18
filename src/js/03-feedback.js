@@ -1,3 +1,4 @@
+import throttle from 'lodash/throttle';
 
 const refs = {
     form: document.querySelector('.feedback-form'),
@@ -5,9 +6,11 @@ const refs = {
     input: document.querySelector('.feedback-form input')
 };
 
+const throttle = _.throttle(onInputForm, 500)
+
 refs.form.addEventListener('submit', onSubmitForm);
-refs.form.addEventListener('input', _.throttle(onInputForm, 500));
- 
+refs.form.addEventListener('input', throttle);
+
 function onSubmitForm(ev) {
     ev.preventDefault()
     ev.currentTarget.reset()
